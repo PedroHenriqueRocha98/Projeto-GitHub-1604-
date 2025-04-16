@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Soma de Dois Números</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        input, button {
+            padding: 8px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Soma de Dois Números</h2>
+
+    <label for="num1">Digite o primeiro número:</label><br>
+    <input type="number" id="num1"><br>
+
+    <label for="num2">Digite o segundo número:</label><br>
+    <input type="number" id="num2"><br>
+
+    <button onclick="calcularSoma()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularSoma() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('resultado').innerText = "Por favor, insira dois números válidos.";
+                return;
+            }
+
+            const soma = num1 + num2;
+            let resultado;
+
+            if (soma > 20) {
+                resultado = soma + 8;
+                document.getElementById('resultado').innerText = 
+                    `Soma maior que 20. Resultado final: ${resultado}`;
+            } else {
+                resultado = soma - 5;
+                document.getElementById('resultado').innerText = 
+                    `Soma menor ou igual a 20. Resultado final: ${resultado}`;
+            }
+        }
+    </script>
+</body>
+</html>
+
