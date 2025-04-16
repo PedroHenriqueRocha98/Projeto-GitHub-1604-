@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="baseMaior">Base maior (B):</label><br>
+  <input type="number" id="baseMaior" placeholder="Digite a base maior"><br>
+
+  <label for="baseMenor">Base menor (b):</label><br>
+  <input type="number" id="baseMenor" placeholder="Digite a base menor"><br>
+
+  <label for="altura">Altura (h):</label><br>
+  <input type="number" id="altura" placeholder="Digite a altura"><br>
+
+  <button onclick="calcularArea()">Calcular Área</button>
+
+  <h3 id="resultado"></h3>
+
+  <script>
+    function calcularArea() {
+      const B = parseFloat(document.getElementById('baseMaior').value);
+      const b = parseFloat(document.getElementById('baseMenor').value);
+      const h = parseFloat(document.getElementById('altura').value);
+
+      if (isNaN(B) || isNaN(b) || isNaN(h)) {
+        document.getElementById('resultado').textContent = "Por favor, preencha todos os campos corretamente.";
+        return;
+      }
+
+      const area = ((B + b) * h) / 2;
+      document.getElementById('resultado').textContent = `A área do trapézio é: ${area.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
